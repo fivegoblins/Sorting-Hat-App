@@ -106,4 +106,4 @@ const quizQuestions = [
     }
   ];
   
-  export default QuizQuestions;
+  export default quizQuestions;
