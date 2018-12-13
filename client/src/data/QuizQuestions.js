@@ -28,16 +28,16 @@ const quizQuestions = [
                 content: "Gold"
             },
             {
+                type: "Slytherin",
+                content: "Silver"
+            },
+            {
                 type: "Hufflepuff",
                 content: "Iron"
             },
             {
                 type: "Ravenclaw",
                 content: "Bronze"
-            },
-            {
-                type: "Slytherin",
-                content: "Silver"
             }
         ]
     },
@@ -45,20 +45,20 @@ const quizQuestions = [
         question: "What is your favorite magical game?",
         answers: [
             {
-                type: "Ravenclaw",
-                content: "Wizard's Chess"
-            },
-            {
-                type: "Hufflepuff",
-                content: "Gobstones"
-            },
-            {
                 type: "Gryffindor",
                 content: "Quidditch"
             },
             {
                 type: "Slytherin",
                 content: "Exploding Snap"
+            },
+            {
+                type: "Hufflepuff",
+                content: "Gobstones"
+            },
+            {
+                type: "Ravenclaw",
+                content: "Wizard's Chess"
             }
         ]
     },
@@ -66,16 +66,16 @@ const quizQuestions = [
         question: "Which pet would you take with you to Hogwarts?",
         answers: [
             {
+                type: "Gryffindor",
+                content: "Owl"
+            },
+            {
                 type: "Slytherin",
                 content: "None"
             },
             {
                 type: "Hufflepuff",
                 content: "Toad"
-            },
-            {
-                type: "Gryffindor",
-                content: "Owl"
             },
             {
                 type: "Ravenclaw",
