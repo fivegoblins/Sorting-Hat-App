@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Quiz from './components/Quiz';
-import quizQuestions from './data/QuizQuestions';
+import quizQuestions from './data/quizQuestions';
 
 import './App.css';
 
@@ -68,6 +68,15 @@ class App extends Component {
       answerOptions: quizQuestions[counter].answers,
       answer: ''
     });
+  }
+
+  getResults() {
+    const answersCount = this.state.answersCount;
+    const answersCountKeys = Object.keys(answersCount);
+    const answersCountValues = answersCountKeys.map((key)=> answersCount[key]);
+    const maxAnswerCount = Math.max.apply(null, answersCountValues);
+
+    return answersCountValues.filter((key)=> answersCount[key] === maxAnswerCount);
   }
 
   handleAnswerSelect(event) {
