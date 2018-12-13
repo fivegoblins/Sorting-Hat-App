@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Quiz from './components/Quiz';
+import Result from './components/Result';
 import quizQuestions from './data/quizQuestions';
 
 import './App.css';
@@ -68,7 +69,7 @@ class App extends Component {
       answerOptions: quizQuestions[counter].answers,
       answer: ''
     });
-  }
+  };
 
   getResults() {
     const answersCount = this.state.answersCount;
@@ -77,7 +78,15 @@ class App extends Component {
     const maxAnswerCount = Math.max.apply(null, answersCountValues);
 
     return answersCountValues.filter((key)=> answersCount[key] === maxAnswerCount);
-  }
+  };
+
+  setResults(result) {
+    if (result.length === 1) {
+      this.setState({result: result[0]});
+    } else {
+      this.setState({result: 'I was unable to sort you. You might be a Muggle.'});
+    }
+  };
 
   handleAnswerSelect(event) {
     this.setAnswer(event.currentTarget.value);
@@ -88,6 +97,25 @@ class App extends Component {
     }
   };
 
+  renderQuiz() {
+    return (
+      <Quiz
+        answer={this.state.answer}
+        answerOptions={this.state.answerOptions}
+        questionId={this.state.questionId}
+        question={this.state.question}
+        questionTotal={quizQuestions.length}
+        onAnswerSelect={this.handleAnswerSelect}
+      />
+    );
+  }
+
+  renderResult() {
+    return (
+      <Result quizResult={this.state.result}/>
+    );
+  }
+
   render() {
     return (
       <div className="App">
@@ -96,14 +124,7 @@ class App extends Component {
             Sorting Hat
           </h2>
         </div>
-        <Quiz
-          answer={this.state.answer}
-          answerOptions={this.state.answerOptions}
-          questionId={this.state.questionId}
-          question={this.state.question}
-          questionTotal={quizQuestions.length}
-          onAnswerSelect={this.handleAnswerSelect}
-        />
+            {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );
   }
