@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Question from './components/Question';
+import QuizQuestions from './data/QuizQuestions';
+
 import './App.css';
 
 class App extends Component {
@@ -21,7 +23,7 @@ class App extends Component {
       result: ''
     };
   }
-  
+
   render() {
     return (
       <div className="App">
