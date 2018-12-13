@@ -1,4 +1,4 @@
-var quizQuestions = [
+const quizQuestions = [
     {
         question: "Which element do you identify with most?",
         answers: [
