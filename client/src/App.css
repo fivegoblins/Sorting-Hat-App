@@ -1,5 +1,4 @@
 
-
 .App {
   text-align: center;
   background-color: #272A2F;
@@ -18,7 +17,7 @@
   margin-bottom: -50px;
   font-size: 48px;
   letter-spacing: 3.5px;
-  font-family: 'Fontdiner Swanky';
+  font-family: 'Trade Winds', cursive;
   text-shadow: 2px 2px black;
 }
 
