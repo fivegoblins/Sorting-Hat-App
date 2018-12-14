@@ -16,10 +16,10 @@ class App extends Component {
       answerOptions: [],
       answer: '',
       answersCount: {
-        slytherin: 0,
-        gryffindor: 0,
-        hufflepuff: 0,
-        ravenclaw: 0
+        Gryffindor: 0,
+        Slytherin: 0,
+        Hufflepuff: 0,
+        Ravenclaw: 0
       },
       result: ''
     };
@@ -49,8 +49,18 @@ class App extends Component {
     return array;
   };
 
+  
+  handleAnswerSelect(event) {
+    this.setAnswer(event.currentTarget.value);
+    if (this.state.questionId < quizQuestions.length) {
+      setTimeout(()=> this.setNextQuestion(), 300);
+    } else {
+      setTimeout(()=> this.setResults(this.getResults()), 300);
+    }
+  };
+
   setAnswer(answer) {
-    this.setState((state)=> ({
+    this.setState((state, props)=> ({
       answersCount: {
         ...state.answersCount,
         [answer]: state.answersCount[answer] + 1
@@ -77,7 +87,7 @@ class App extends Component {
     const answersCountValues = answersCountKeys.map((key)=> answersCount[key]);
     const maxAnswerCount = Math.max.apply(null, answersCountValues);
 
-    return answersCountValues.filter((key)=> answersCount[key] === maxAnswerCount);
+    return answersCountKeys.filter((key)=> answersCount[key] === maxAnswerCount);
   };
 
   setResults(result) {
@@ -85,15 +95,6 @@ class App extends Component {
       this.setState({result: result[0]});
     } else {
       this.setState({result: 'I was unable to sort you. You might be a Muggle.'});
-    }
-  };
-
-  handleAnswerSelect(event) {
-    this.setAnswer(event.currentTarget.value);
-    if (this.state.questionId < quizQuestions.length) {
-      setTimeout(()=> this.setNextQuestion(), 300);
-    } else {
-      setTimeout(()=> this.setResults(this.getResults()), 300);
     }
   };
 
