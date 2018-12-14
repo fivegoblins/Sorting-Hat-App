@@ -30,6 +30,7 @@ body {
   margin: 0 auto;
   background: #fff;
   border-radius: 3px;
+  margin-bottom: 60px;
 }
 
 @media (min-width: 769px) {
@@ -41,6 +42,7 @@ body {
 /* Result Component */
 .result {
   padding: 1.5rem 2.5rem;
+  font-size: 2rem;
 }
 
 /* Quiz Component */
@@ -48,18 +50,20 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+  font-weight: bold;
+  font-size: 2.4rem;
 }
 
 /* QuestionCount Component */
 .question-count {
-  padding: 1.5rem 2.5rem 0;
-  font-size: 14px;
+  padding: 1.5rem 2.5rem 1rem 4.5rem;
+  font-size: 16px;
 }
 
 /* Question Component */
 .question {
   margin: 0;
-  padding: 0.5rem 2.5rem 1.5rem 2.5rem;
+  padding: 0.5rem 2.5rem 1.5rem 4.5rem;
 }
 
 /* AnswerOption Component */
@@ -68,7 +72,7 @@ body {
 }
 
 .answer-option:hover {
-  background-color: #eefbfe;
+  background-color: #DEE0E3;
 }
 
 .radio-button {
@@ -111,7 +115,7 @@ body {
 .radio-button:checked ~ .radio-label:before {
   content: '';
   background-size: 27px;
-  border-color: #8bc53f;
+  border-color: #81091F;
 }
 
 /* Animation */
